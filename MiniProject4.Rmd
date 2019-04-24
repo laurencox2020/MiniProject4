@@ -7,5 +7,13 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(RMySQL)
+db <- dbConnect(MySQL(), 
+                host = "scidb.smith.edu", 
+                user = "mth292", 
+                password = "RememberPi", 
+                dbname = "imdb")
+knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
 
