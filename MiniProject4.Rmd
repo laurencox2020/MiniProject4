@@ -1,0 +1,11 @@
+---
+title: "MiniProject4"
+author: "Kate Bruncati, Lauren Cox, Emilia Field"
+date: "4/24/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
