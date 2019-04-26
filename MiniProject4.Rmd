@@ -2,7 +2,9 @@
 title: "MiniProject4"
 author: "Kate Bruncati, Lauren Cox, Emilia Field"
 date: "4/24/2019"
-output: html_document
+output: 
+  html_document:
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
