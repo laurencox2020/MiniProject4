@@ -18,20 +18,18 @@ db <- dbConnect(MySQL(),
                 dbname = "imdb")
 knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
-![Scarlett Johansson (left) and Brie Larson (right)](http://cdn01.cdn.justjared.com/wp-content/uploads/2019/04/brie-ellen/brie-larson-scarlett-johansson-ellen-show-02.JPG) 
-
-[^1]
+![Scarlett Johansson (left) and Brie Larson (right)](http://cdn01.cdn.justjared.com/wp-content/uploads/2019/04/brie-ellen/brie-larson-scarlett-johansson-ellen-show-02.JPG)[^1]
 
 
 **Scarlett Johansson - Top 5 Rated Movies**
 
-```{sql, connection=db}
+```{sql, connection=db, output.var="scarlett"}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
 JOIN movie_info_idx mii2 ON mii2.movie_id = t.id
 JOIN role_type r ON r.id = ci.role_id
-WHERE ci.person_id = 3305349
+WHERE (ci.person_id = 3305349) 
 AND t.kind_id = 1
 AND mii2.info_type_id = 101
 AND r.id = 2
@@ -42,7 +40,7 @@ LIMIT 0,5
 
 **Brie Larson - Top 5 Rated Movies**
 
-```{sql connection=db}
+```{sql connection=db, output.var="brie"}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
@@ -55,8 +53,26 @@ AND r.id = 2
 ORDER BY rating desc
 LIMIT 0, 5;
 ```
+
+```{r}
+combining_data <- bind_rows(scarlett, brie) 
+
+avengers <- combining_data %>%
+  arrange(desc(rating))
+
+
+```
+
+```{r}
+rating_plot <- ggplot(avengers, aes(x = title, y = rating, color)) +
+  geom_bar(stat = "identity", position = "dodge")
+
+rating_plot
+```
+
+
 ^[This is my repository (https://github.com/laurencox2020/MiniProject4.git)
 
 Word count: `r wordcountaddin::word_count()`
 
-[^1]: Photo by Michael Rozman/Warner Bros
+[^1]: Photo by Michael Rozman/Warner Bros, (http://cdn01.cdn.justjared.com/wp-content/uploads/2019/04/brie-ellen/brie-larson-scarlett-johansson-ellen-show-02.JPG)
