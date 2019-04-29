@@ -34,12 +34,6 @@ ORDER BY rating desc
 LIMIT 0,5
 ```
 
-```{sql, connection=db}
-SELECT *
-FROM name
-WHERE name LIKE 'Larson, Brie%';
-```
-
 ```{sql connection=db}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role
 FROM cast_info ci
