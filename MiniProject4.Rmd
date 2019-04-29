@@ -1,5 +1,5 @@
 ---
-title: "MiniProject4"
+title: "Leading Ladies in Avengers: From Zero to Hero"
 author: "Kate Bruncati, Lauren Cox, Emilia Field"
 date: "4/29/2019"
 output: 
@@ -55,5 +55,8 @@ AND r.id = 2
 ORDER BY rating desc
 LIMIT 0, 5;
 ```
+^[This is my repository (https://github.com/laurencox2020/MiniProject4.git)
+
+Word count: `r wordcountaddin::word_count()`
 
 [^1]: Photo by Michael Rozman/Warner Bros
