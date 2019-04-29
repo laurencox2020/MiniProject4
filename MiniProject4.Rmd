@@ -64,7 +64,7 @@ avengers <- combining_data %>%
 
 ```{r}
 rating_plot <- ggplot(avengers, aes(x = reorder(title, rating), y = rating, fill = person_id)) +
-  geom_bar(stat = "identity", position = "dodge")
+  geom_bar(stat = "identity", position = "dodge") 
 
 rating_plot
 ```
