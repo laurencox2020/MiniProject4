@@ -19,6 +19,9 @@ db <- dbConnect(MySQL(),
 knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
 
+
+**Scarlett Johansson - Top 5 Rated Movies**
+
 ```{sql, connection=db}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role
 FROM cast_info ci
@@ -33,6 +36,8 @@ GROUP BY title
 ORDER BY rating desc
 LIMIT 0,5
 ```
+
+**Brie Larson - Top 5 Rated Movies**
 
 ```{sql connection=db}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role

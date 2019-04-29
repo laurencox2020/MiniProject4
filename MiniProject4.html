@@ -208,6 +208,7 @@ $(document).ready(function () {
 </div>
 
 
+<p><strong>Scarlett Johansson - Top 5 Rated Movies</strong></p>
 <pre class="sql"><code>SELECT t.title, t.production_year, mii2.info AS rating, r.role
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
@@ -265,51 +266,7 @@ LIMIT 0,5</code></pre>
 </tbody>
 </table>
 </div>
-<pre class="sql"><code>SELECT *
-FROM name
-WHERE name LIKE 'Larson, Brie%';</code></pre>
-<div class="knitsql-table">
-<table>
-<caption>2 records</caption>
-<thead>
-<tr class="header">
-<th align="right">id</th>
-<th align="left">name</th>
-<th align="left">imdb_index</th>
-<th align="right">imdb_id</th>
-<th align="left">gender</th>
-<th align="left">name_pcode_cf</th>
-<th align="left">name_pcode_nf</th>
-<th align="left">surname_pcode</th>
-<th align="left">md5sum</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">3410664</td>
-<td align="left">Larson, Brie</td>
-<td align="left">NA</td>
-<td align="right">NA</td>
-<td align="left">f</td>
-<td align="left">L6251</td>
-<td align="left">B6462</td>
-<td align="left">L625</td>
-<td align="left">da0b29ce5066c856e764bb0f1f7574b1</td>
-</tr>
-<tr class="even">
-<td align="right">4864466</td>
-<td align="left">Larson, Brienne</td>
-<td align="left">NA</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">L6251</td>
-<td align="left">B6546</td>
-<td align="left">L625</td>
-<td align="left">e06f6e11568d13d3985385ba1855f117</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><strong>Brie Larson - Top 5 Rated Movies</strong></p>
 <pre class="sql"><code>SELECT t.title, t.production_year, mii2.info AS rating, r.role
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
