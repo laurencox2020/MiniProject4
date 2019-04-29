@@ -18,7 +18,7 @@ db <- dbConnect(MySQL(),
                 dbname = "imdb")
 knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
-
+![Scarlett Johansson (left) and Brie Larson (right)](http://cdn01.cdn.justjared.com/wp-content/uploads/2019/04/brie-ellen/brie-larson-scarlett-johansson-ellen-show-02.JPG)
 
 **Scarlett Johansson - Top 5 Rated Movies**
 
