@@ -1,7 +1,7 @@
 ---
 title: "MiniProject4"
 author: "Kate Bruncati, Lauren Cox, Emilia Field"
-date: "4/26/2019"
+date: "4/29/2019"
 output: 
   html_document:
     code_folding: hide
@@ -52,4 +52,5 @@ AND r.id = 2
 ORDER BY rating desc
 LIMIT 0, 5;
 ```
+
 
