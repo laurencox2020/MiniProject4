@@ -1,8 +1,8 @@
 ---
-title: "Leading Ladies in Avengers: From Zero to Hero"
+title: 'Leading Ladies in Avengers: From Zero to Hero'
 author: "Kate Bruncati, Lauren Cox, Emilia Field"
 date: "4/29/2019"
-output: 
+output:
   html_document:
     code_folding: hide
 ---
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 **Scarlett Johansson - Top 5 Rated Movies**
 
 ```{sql, connection=db, output.var="scarlett"}
-SELECT t.title, t.production_year, mii2.info AS rating, r.role
+SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
 JOIN movie_info_idx mii2 ON mii2.movie_id = t.id
@@ -41,7 +41,7 @@ LIMIT 0,5
 **Brie Larson - Top 5 Rated Movies**
 
 ```{sql connection=db, output.var="brie"}
-SELECT t.title, t.production_year, mii2.info AS rating, r.role
+SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
 JOIN movie_info_idx mii2 ON mii2.movie_id = t.id
@@ -58,13 +58,12 @@ LIMIT 0, 5;
 combining_data <- bind_rows(scarlett, brie) 
 
 avengers <- combining_data %>%
+  mutate(rating = parse_number(rating)) %>%
   arrange(desc(rating))
-
-
 ```
 
 ```{r}
-rating_plot <- ggplot(avengers, aes(x = title, y = rating, color)) +
+rating_plot <- ggplot(avengers, aes(x = reorder(title, rating), y = rating, fill = person_id)) +
   geom_bar(stat = "identity", position = "dodge")
 
 rating_plot
