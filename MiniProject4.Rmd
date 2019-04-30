@@ -2,6 +2,7 @@
 title: 'Leading Ladies in Avengers: From Zero to Hero'
 author: "Kate Bruncati, Lauren Cox, Emilia Field"
 date: "4/30/2019"
+
 output:
   html_document:
     code_folding: hide
@@ -68,7 +69,7 @@ rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(p
   geom_bar(stat = "identity", position = "dodge") +
   theme(axis.text.x = element_text(angle = 90, hjust =1)) +
   ggtitle("Scarlett Johansson vs. Brie Larson") +
-  scale_fill_discrete("Actress", labels = c("Scarlett Johansson", "Brie Larson")) 
+  scale_fill_manual(values = c("#9900CC", "#FFCC00"), name = "Actress", labels = c("Scarlett Johansson", "Brie Larson")) 
 
 rating_plot
 ```
