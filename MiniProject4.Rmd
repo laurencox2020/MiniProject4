@@ -54,15 +54,15 @@ ORDER BY rating desc
 LIMIT 0, 5;
 ```
 
-```{r}
+```{r, message = FALSE, warning = FALSE}
 combining_data <- bind_rows(scarlett, brie) 
 
 avengers <- combining_data %>%
   arrange(desc(rating))
 ```
 
-```{r}
-rating_plot <- ggplot(avengers, aes(x = reorder(title, rating), y = rating, fill = person_id)) +
+```{r, message = FALSE, warning = FALSE}
+rating_plot <- ggplot(avengers, aes(x = reorder(title, -rating), y = rating, fill = as.character(person_id))) +
   geom_bar(stat = "identity", position = "dodge") 
 
 rating_plot
