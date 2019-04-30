@@ -23,7 +23,7 @@ knitr::opts_chunk$set(connection = db, max.print = 20)
 
 **Scarlett Johansson - Top 5 Rated Movies**
 
-```{sql, connection=db, output.var="scarlett"}
+```{sql, connection=db}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
 JOIN title t ON ci.movie_id = t.id
@@ -54,7 +54,7 @@ ORDER BY rating desc
 LIMIT 0, 5;
 ```
 
-```{r}
+{r}
 combining_data <- bind_rows(scarlett, brie) 
 
 avengers <- combining_data %>%
@@ -62,7 +62,7 @@ avengers <- combining_data %>%
   arrange(desc(rating))
 ```
 
-```{r}
+r}
 rating_plot <- ggplot(avengers, aes(x = reorder(title, rating), y = rating, fill = person_id)) +
   geom_bar(stat = "identity", position = "dodge") 
 
