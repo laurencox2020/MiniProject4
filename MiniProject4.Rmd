@@ -66,7 +66,8 @@ avengers <- combining_data %>%
 ```{r, message = FALSE, warning = FALSE}
 rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(person_id))) +
   geom_bar(stat = "identity", position = "dodge") +
-  theme(axis.text.x = element_text(angle = 90, hjust =1))
+  theme(axis.text.x = element_text(angle = 90, hjust =1)) +
+  scale_fill_manual("Actress", values = c("Scarlett Johansson" = "purple", "Brie Larson" = "yellow"))
 
 rating_plot
 ```
