@@ -58,12 +58,15 @@ LIMIT 0, 5;
 combining_data <- bind_rows(scarlett, brie) 
 
 avengers <- combining_data %>%
+  mutate(title = factor(title,
+                        levels = c("The Prestige", "Room", "The Avengers", "Her", "Short Term 12", "Captain America: Civil War", "Captain America: The Winter Soldier", "The Babysitter", "Scott Pilgrim vs. the World", "Harmontown"))) %>%
   arrange(desc(rating))
 ```
 
 ```{r, message = FALSE, warning = FALSE}
-rating_plot <- ggplot(avengers, aes(x = reorder(title, -rating), y = rating, fill = as.character(person_id))) +
-  geom_bar(stat = "identity", position = "dodge") 
+rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(person_id))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, hjust =1))
 
 rating_plot
 ```
