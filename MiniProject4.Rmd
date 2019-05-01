@@ -1,11 +1,11 @@
 ---
 title: 'Leading Ladies in Avengers: From Zero to Hero'
 author: "Kate Bruncati, Lauren Cox, Emilia Field"
-date: "4/30/2019"
-
+date: "5/1/2019"
 output:
   html_document:
     code_folding: hide
+    theme: darkly
 ---
 
 ```{r setup, include=FALSE}
