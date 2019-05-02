@@ -59,6 +59,8 @@ ORDER BY rating desc
 LIMIT 0, 5;
 ```
 
+To make our graph, we combined our information of Johansson's and Larson's movies together by binding the rows of the tables we created. 
+
 ```{r, message = FALSE, warning = FALSE}
 combining_data <- bind_rows(scarlett, brie) 
 
@@ -67,6 +69,8 @@ avengers <- combining_data %>%
                         levels = c("The Prestige", "Room", "The Avengers", "Her", "Short Term 12", "Captain America: Civil War", "Captain America: The Winter Soldier", "The Babysitter", "Scott Pilgrim vs. the World", "Harmontown"))) %>%
   arrange(desc(rating))
 ```
+
+At this stage, we simply worked on making the graphic more appealing by changing axis labels and assigning colors to show which movies were Scarlett's and which were Brie's.
 
 ```{r, message = FALSE, warning = FALSE}
 rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(person_id))) +
