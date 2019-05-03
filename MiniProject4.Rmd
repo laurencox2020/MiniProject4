@@ -55,15 +55,14 @@ LIMIT 0,5
 ```
 **Brie Larson - Top 5 Rated Movies**
 
-We carried out the same coding for Brie Larson and only had to adjust to her specific id.
+We carried out the same coding for Brie Larson and adjusted to her celebrity id.
 
-Although it is currently unknown how much Brie Larson made for Endgame, she did receive $5 million in Captain Marvel and received more than Chadwick Boseman, Robert Downey Jr., and Chris Evans did for their first Marvel appearances [^9]. This has proven to be a large step from her recognized lead role in Room. Before becoming Captain Marvel, however, Larson lived a life of being constantly concerned about money and reports that there were points when she was broke [^10].
+Although it is unknown how much Brie Larson made for Endgame, she received $5 million in Captain Marvel - more than Chadwick Boseman, Robert Downey Jr., and Chris Evans did for their first Marvel appearances [^9]. Before becoming Captain Marvel, however, Larson lived a life of constantly being concerned about money and going broke [^10].
 
-The highest rated movie for Brie Larson is Room, an award-winning film that played in theaters in 2015. The rating for this movie was 8.2. In this film, Larson starred as a mother trapped by a deranged kidnapper, working to finally gain freedom for herself and her son. The movie received many awards and Larson received the Academy Award for Best Actress. Received well by the public, Room grossed $35,401,758 worldwide [^11]. 
+The highest rated movie for Brie Larson is Room which played in theaters in 2015. The rating for this movie was 8.2. Larson starred as a mother trapped by a deranged kidnapper, working to finally gain freedom for herself and her son. The movie was award-winning and Larson earned the Academy Award for Best Actress. Room grossed $35,401,758 worldwide [^11]. 
 
-Brie Larson’s path started with various TV series such as To Have & To Hold and Touched by an Angel in the late 1990s. Her first non-TV film was 13 Going on 30 where she played Six Chick and had minimal lines. She also has been in various short films including “The Babysitter” and “Jay Z: Family Feud ft. Beyoncé”. Based off of our table, her more well-known films include Scott Pilgrim vs. The World which received a rating of 7.5 and Short Term 12 which earned a rating of 8.0. 
+Brie Larson’s path started with various TV series such as To Have & To Hold in the late 1990s. Her first non-TV film was 13 Going on 30 where she played Six Chick. She has been in various short films including “The Babysitter” and “Jay Z: Family Feud ft. Beyoncé”. Based off of our table, her more successful films include Scott Pilgrim vs. The World which received a rating of 7.5 and Short Term 12 which earned a rating of 8.0. Although she has a shorter path than Johansson, Larson is making her way to stardom as the powerful woman she plays. 
 
-Although she has a much shorter path than Scarlett Johansson, Brie Larson is making her way to the top as the powerful woman she plays. Her journey is really starting to pick up.  
 ```{sql connection=db, output.var="brie"}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
