@@ -82,7 +82,7 @@ ORDER BY rating desc
 LIMIT 0, 5;
 ```
 
-To make our graph, we combined our information of Johansson's and Larson's movies together by binding the rows of the tables we created. 
+We combined our information of Johansson's and Larson's movies together by binding the rows of the tables we created. 
 
 ```{r, message = FALSE, warning = FALSE}
 combining_data <- bind_rows(scarlett, brie) 
@@ -93,7 +93,7 @@ avengers <- combining_data %>%
   arrange(desc(rating))
 ```
 
-At this stage, we simply worked on making the graphic more appealing by changing axis labels and assigning colors to show which movies were Scarlett's and which were Brie's.
+We made the graphic more comprehensible by changing axis labels and assigning colors to show which movies were Scarlett's versus Brie's.
 
 ```{r, message = FALSE, warning = FALSE}
 rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(person_id))) +
@@ -105,6 +105,7 @@ rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(p
 
 rating_plot
 ```
+
 The data visualization we created compares each actresses’ top 5 ratings in descending order starting at the highest number. Comparing the two actresses, Brie’s third, fourth, and fifth highest scored movies are rated lower than Scarlett’s. 
 Scarlett could have higher rankings compared to Brie because she has starred in the Avengers series longer. Brie first made her appearance in the Marvel series in 2019 as Captain Marvel. Scarlett first starred as Natasha Romanoff/Black Widow in Iron Man 2 back in 2010. 
 
