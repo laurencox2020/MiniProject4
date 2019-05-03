@@ -27,18 +27,14 @@ With numbers like that, wouldn't you want to get star in a movie like that? In t
 
 **We are trying figure out whether or not these two actresses’ quality of work based on ratings is related to their net worths and the time frame of their inductions to the Avengers’ franchise.** 
 
-Overall, we dive into the ratings of each actresses top five rated movies on imdb to determine whether or not our hypothesis holds true. 
-
 **Scarlett Johansson - Top 5 Rated Movies**
-For her appearance in Endgame, Scarlett Johansson reportedly made $15 million.[^3] This number was equivalent to Chris Evans’, Chris Hemsworth’s, Jeremy Renner’s, and Mark Ruffalo’s individual salaries from Endgame.[^4] Back in 2015, Scarlett Johansson was ranked as the second on the world’s highest-paid actresses list.[^5] Johansson reportedly commands over $10 million upfront per movie and is engaged in several endorsements with Dolce & Gabbana and Sodastream.[^6] For “Black Widow,” which is expected to be released sometime in 2020, she will reportedly earn at least $15 million.[^7]
+For her appearance in Endgame, Scarlett Johansson reportedly made $15 million.[^3] This number was equivalent to Chris Evans’ and Chris Hemsworth’s individual salaries from Endgame.[^4] Back in 2015, Scarlett Johansson was ranked as the second on the world’s highest-paid actresses list.[^5] Johansson reportedly commands over $10 million upfront per movie and is engaged in several endorsements with Dolce & Gabbana and Sodastream.[^6] For “Black Widow,” which is expected to be released sometime in 2020, she will reportedly earn at least $15 million.[^7]
 
 Johansson’s highest rated movie, excluding not updated data on MySQL for Endgame, was “The Prestige” from 2006. This movie scored a rating of 8.5 according to the data table. Johansson played the role of Hugh Jackman’s love interest and assistant. “The Prestige” received majority positive reviews from the general public as a mystery thriller. “The Prestige” was a box office success, grossing approximately $109,676,311 worldwide.[^8]
 
 Prior to starring in “The Prestige,” Johansson was featured in 23 films. Johansson’s movie career originated in 1994 when she starred in the American comedy drama action film, “North.” Johansson was 9 years old at the time and only had a brief appearance.  Following “North,” Johansson had notable roles in “The Horse Whisperer” and “Lost in Translation,” acting alongside Bill Murray. “Lost in Translation” received an imdb rating of 7.8, which would have been right behind “Captain America: The Winter Soldier” on the data table.
 
-Besides her recurring role as Natasha Romanoff/Black Widow in the “Avengers” movie series, Johansson has also starred in other well known films such as “Her,” “Lucy,” and “We Bought A Zoo." Johansson is a vet to the silver screen. Her status as an actress gives her the ability to negotiate and leverage skill as a way of receiving a higher salary and closing the equal pay gap in her industry.  
-
-To get our data graphic, we selected the title of films from title, the production year of films from title, the ratings of films from the movie_info index, the role of a celebrity in a film from role_type, and the celebrity id from character_info. We joined title and character_info with the movie_info index as they had the same id column as well as the id from the role_type with character_info. By doing this, we were able to filter for Scarlett Johansson's assigned id and movies she only acted in. To get our specific order, we grouped information by movie title and ordered the ratings from highest to lowest; we limited to 5 to get the top 5. 
+We selected the title of films from title, the production year from title, the ratings  from the movie_info index, the role in a film from role_type, and the celebrity id from character_info. We joined title and character_info with the movie_info index as they had the same id column as well as the id from the role_type with character_info. By doing this, we were able to filter for both actresses' assigned id and movies only acted in. To get our specific order, we grouped information by movie title and ordered the ratings from highest to lowest; we limited to 5 to get the top 5. 
 ```{sql, connection=db, output.var="scarlett"}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
@@ -55,14 +51,11 @@ LIMIT 0,5
 ```
 **Brie Larson - Top 5 Rated Movies**
 
-We carried out the same coding for Brie Larson and adjusted to her celebrity id.
-
 Although it is unknown how much Brie Larson made for Endgame, she received $5 million in Captain Marvel - more than Chadwick Boseman, Robert Downey Jr., and Chris Evans did for their first Marvel appearances [^9]. Before becoming Captain Marvel, however, Larson lived a life of constantly being concerned about money and going broke [^10].
 
 The highest rated movie for Brie Larson is Room which played in theaters in 2015. The rating for this movie was 8.2. Larson starred as a mother trapped by a deranged kidnapper, working to finally gain freedom for herself and her son. The movie was award-winning and Larson earned the Academy Award for Best Actress. Room grossed $35,401,758 worldwide [^11]. 
 
 Brie Larson’s path started with various TV series such as To Have & To Hold in the late 1990s. Her first non-TV film was 13 Going on 30 where she played Six Chick. She has been in various short films including “The Babysitter” and “Jay Z: Family Feud ft. Beyoncé”. Based off of our table, her more successful films include Scott Pilgrim vs. The World which received a rating of 7.5 and Short Term 12 which earned a rating of 8.0. Although she has a shorter path than Johansson, Larson is making her way to stardom as the powerful woman she plays. 
-
 ```{sql connection=db, output.var="brie"}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
@@ -99,18 +92,13 @@ rating_plot <- ggplot(avengers, aes(x = title, y = rating, fill = as.character(p
 
 rating_plot
 ```
-The data visualization we created compares each actresses’ top 5 ratings in descending order starting at the highest number. Comparing the two actresses, Brie’s third, fourth, and fifth highest scored movies are rated lower than Scarlett’s. 
-Scarlett could have higher rankings compared to Brie because she has starred in the Avengers series longer. Brie first made her appearance in the Marvel series in 2019 as Captain Marvel. Scarlett first starred as Natasha Romanoff/Black Widow in Iron Man 2 back in 2010. 
+Comparing both actresses, Brie’s third, fourth, and fifth highest scored movies are rated lower than Scarlett’s.Scarlett could have higher rankings compared to Brie because she has starred in the Avengers series longer. Brie first made her appearance in the Marvel series in 2019 as Captain Marvel. Scarlett first starred as Natasha Romanoff/Black Widow in Iron Man 2 back in 2010. 
 
 Relating back to net worth, we believe that Scarlett Johansson has a higher overall net worth due to her longer, successful career. Scarlett’s highest rating was from a movie in 2006. Brie’s highest rating so far was from 2015. Scarlett has also been in the Avengers series for longer, making her a wider known actress.
 
-**Our counter-argument is: Brie’s rise to popularity is just starting. She can negotiate for bigger contracts while continuing her role as Captain Marvel in the Avengers series. Since she is becoming more well known now, she could star in future movies with higher rankings and expand her net work to perhaps surphass Scarlett's net worth.** 
+**Our counter-argument is: Brie’s rise to popularity is just starting. Since she is becoming more well known now, she could star in future movies with higher rankings and expand her net work to perhaps surphass Scarlett's net worth.** 
 
-In this bar graph, the purple bars are representative of Scarlett Johansson and the yellow bars are representative of Brie Larson. We chose a bar graph to allow the viewer to be able to quickly tell how the top ten movies compare to each other utilizing length since it is second best visual cue when displaying data. 
-
-We chose to display the movie titles on the x-axis and had title displayed vertically to allow ease of readability. 
-
-Then put the imdb numerical values on the y axis so that the viewers can scan from left to right and gain an understanding about how each movie falls on the rating scale. 
+In this bar graph, the purple bars are representative of Scarlett Johansson and the yellow bars are representative of Brie Larson. We chose a bar graph to allow the viewer to be able to quickly tell how the top ten movies compare to each other utilizing length since it is second best visual cue when displaying data.We chose to display the movie titles on the x-axis and had title displayed vertically to allow ease of readability. Imdb numerical values are on the y axis so that the viewers can scan from left to right and gain an understanding about how each movie falls on the rating scale. 
 
 ^[This is my repository (https://github.com/laurencox2020/MiniProject4.git)
 
