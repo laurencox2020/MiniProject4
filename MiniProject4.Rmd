@@ -19,18 +19,18 @@ db <- dbConnect(MySQL(),
                 dbname = "imdb")
 knitr::opts_chunk$set(connection = db, max.print = 20)
 ```
-You may have heard the two names, Scarlett Johansson and Brie Larson. This could be because the two actress have distinguished themselves in the acting world, but in recent news the two have landed featured roles in the newest movie, The Avengers: Endgame.
+You may have heard the two names, Scarlett Johansson and Brie Larson. This could be because the two actress have distinguished themselves in the acting world, but in recent news the two have landed featured roles in the newest movie, **"The Avengers: Endgame."**
 
-As of April 30, 2019, Avengers: Endgame has grossed $427.1 million in the United States and Canada, and $1.054 billion in other territories, for a worldwide total of $1.481 billion. Making Avengers: Endgame the highest-grossing film of 2019, as well as the eighth-highest-grossing film of all time.
+As of April 30, 2019, "Avengers: Endgame" has grossed $427.1 million in the United States and Canada, and $1.054 billion in other territories, for a worldwide total of $1.481 billion. Making "Avengers: Endgame" the highest-grossing film of 2019, as well as the eighth-highest-grossing film of all time.
 
-With numbers like that, wouldn't you want to get star in a movie like that? In the realm of Marvel, Scarlett Johansson is a vet, she has been in 7 Marvel movies. As of 2019, Scarlett Johansson’s total net worth is estimated at $140 million.[^2] The newbie, Brie Larson has smashed onto the scene in her recent Captain Marvel movie and Avengers: Endgame. Now she stands as a powerful female character at the head of a very popular franchise, yielding a net worth of approximately $10 million (Bamford). 
+In the realm of Marvel, Scarlett Johansson is a vet and has been in 7 Marvel movies so far. As of 2019, Scarlett Johansson’s total net worth is estimated at $140 million.[^2] The newbie, Brie Larson, has smashed onto the scene in her recent "Captain Marvel" movie and "Avengers: Endgame." Now she stands as a powerful female character at the head of a very popular franchise, yielding a net worth of approximately $10 million. 
 
 **We are trying figure out whether or not these two actresses’ quality of work based on ratings is related to their net worths and the time frame of their inductions to the Avengers’ franchise.** 
 
 **Scarlett Johansson - Top 5 Rated Movies**
-For her appearance in Endgame, Scarlett Johansson reportedly made $15 million.[^3] This number was equivalent to Chris Evans’ and Chris Hemsworth’s individual salaries from Endgame.[^4] Back in 2015, Scarlett Johansson was ranked as the second on the world’s highest-paid actresses list.[^5] Johansson reportedly commands over $10 million upfront per movie and is engaged in several endorsements with Dolce & Gabbana and Sodastream.[^6] For “Black Widow,” which is expected to be released sometime in 2020, she will reportedly earn at least $15 million.[^7]
+For her appearance in "Endgame," Scarlett Johansson reportedly made $15 million.[^3] This number was equivalent to Chris Evans’ and Chris Hemsworth’s individual salaries from "Endgame."[^4] Back in 2015, Scarlett Johansson was ranked second on the world’s highest-paid actresses list.[^5] Johansson reportedly commands over $10 million upfront per movie.[^6] For “Black Widow,” which is expected to be released sometime in 2020, she will reportedly earn at least $15 million.[^7]
 
-Johansson’s highest rated movie, excluding not updated data on MySQL for Endgame, was “The Prestige” from 2006. This movie scored a rating of 8.5 according to the data table. Johansson played the role of Hugh Jackman’s love interest and assistant. “The Prestige” received majority positive reviews from the general public as a mystery thriller. “The Prestige” was a box office success, grossing approximately $109,676,311 worldwide.[^8]
+Johansson’s highest rated movie, excluding not updated data on MySQL for "Endgame," was “The Prestige” from 2006. This movie scored a rating of 8.5 according to the data table. Johansson played the role of Hugh Jackman’s love interest and assistant. “The Prestige” received majority positive reviews from the general public. “The Prestige” was a box office success, grossing approximately $109,676,311 worldwide.[^8]
 
 Prior to starring in “The Prestige,” Johansson was featured in 23 films. Johansson’s movie career originated in 1994 when she starred in the American comedy drama action film, “North.” Johansson was 9 years old at the time and only had a brief appearance.  Following “North,” Johansson had notable roles in “The Horse Whisperer” and “Lost in Translation,” acting alongside Bill Murray. “Lost in Translation” received an imdb rating of 7.8, which would have been right behind “Captain America: The Winter Soldier” on the data table.
 
@@ -51,11 +51,11 @@ LIMIT 0,5
 ```
 **Brie Larson - Top 5 Rated Movies**
 
-Although it is unknown how much Brie Larson made for Endgame, she received $5 million in Captain Marvel - more than Chadwick Boseman, Robert Downey Jr., and Chris Evans did for their first Marvel appearances [^9]. Before becoming Captain Marvel, however, Larson lived a life of constantly being concerned about money and going broke [^10].
+Although it is unknown how much Brie Larson made for "Endgame," she received $5 million in "Captain Marvel" - more than Chadwick Boseman, Robert Downey Jr., and Chris Evans did for their first Marvel appearances [^9]. Before becoming Captain Marvel, however, Larson lived a life of constantly being concerned about money and going broke [^10].
 
-The highest rated movie for Brie Larson is Room which played in theaters in 2015. The rating for this movie was 8.2. Larson starred as a mother trapped by a deranged kidnapper, working to finally gain freedom for herself and her son. The movie was award-winning and Larson earned the Academy Award for Best Actress. Room grossed $35,401,758 worldwide [^11]. 
+The highest rated movie for Brie Larson is "Room" which played in theaters in 2015. The rating for this movie was 8.2. Larson starred as a mother trapped by a deranged kidnapper, working to finally gain freedom for herself and her son. The movie was award-winning and Larson earned the Academy Award for Best Actress. Room grossed $35,401,758 worldwide [^11]. 
 
-Brie Larson’s path started with various TV series such as To Have & To Hold in the late 1990s. Her first non-TV film was 13 Going on 30 where she played Six Chick. She has been in various short films including “The Babysitter” and “Jay Z: Family Feud ft. Beyoncé”. Based off of our table, her more successful films include Scott Pilgrim vs. The World which received a rating of 7.5 and Short Term 12 which earned a rating of 8.0. Although she has a shorter path than Johansson, Larson is making her way to stardom as the powerful woman she plays. 
+Brie Larson’s path started with various TV series such as "To Have & To Hold" in the late 1990s. Her first non-TV film was "13 Going on 30" where she played Six Chick. She has been in various short films including “The Babysitter” and “Jay Z: Family Feud ft. Beyoncé”. Based off of our table, her more successful films include Scott Pilgrim vs. The World which received a rating of 7.5 and "Short Term 12" which earned a rating of 8.0. Although she has a shorter path than Johansson, Larson is making her way to stardom as the powerful woman she plays. 
 ```{sql connection=db, output.var="brie"}
 SELECT t.title, t.production_year, mii2.info AS rating, r.role, ci.person_id
 FROM cast_info ci
@@ -94,7 +94,7 @@ rating_plot
 ```
 Comparing both actresses, Brie’s third, fourth, and fifth highest scored movies are rated lower than Scarlett’s.Scarlett could have higher rankings compared to Brie because she has starred in the Avengers series longer. Brie first made her appearance in the Marvel series in 2019 as Captain Marvel. Scarlett first starred as Natasha Romanoff/Black Widow in Iron Man 2 back in 2010. 
 
-Relating back to net worth, we believe that Scarlett Johansson has a higher overall net worth due to her longer, successful career. Scarlett’s highest rating was from a movie in 2006. Brie’s highest rating so far was from 2015. Scarlett has also been in the Avengers series for longer, making her a wider known actress.
+Relating back to net worth, we believe that Scarlett Johansson has a higher overall net worth due to her longer, successful career. Scarlett’s highest rating was from a movie in 2006. Brie’s highest rating so far was from 2015. Scarlett has also been in the Avengers series for longer.
 
 **Our counter-argument is: Brie’s rise to popularity is just starting. Since she is becoming more well known now, she could star in future movies with higher rankings and expand her net work to perhaps surphass Scarlett's net worth.** 
 
