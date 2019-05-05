@@ -96,7 +96,7 @@ Comparing both actresses, Brie’s third, fourth, and fifth highest scored movie
 
 Relating back to net worth, we believe that Scarlett Johansson has a higher overall net worth due to her longer, successful career. Scarlett’s highest rating was from a movie in 2006. Brie’s highest rating so far was from 2015. Scarlett has also been in the Avengers series for longer.
 
-**Our counter-argument is: Brie’s rise to popularity is just starting. Since she is becoming more well known now, she could star in future movies with higher rankings and expand her net work to perhaps surphass Scarlett's net worth.** 
+**Our counter-argument is: Brie’s rise to popularity is just starting. The graph shows that two Avengers movies are in Scarlett's top five highest ratings. As Brie stars in more Avengers movies, this could boost her overall ratings. Since Brie's career is just taking off, she still has the potential to increase her overall net worth as well, perhaps surpassing Scarlett's net worth.** 
 
 In this bar graph, the purple bars are representative of Scarlett Johansson and the yellow bars are representative of Brie Larson. We chose a bar graph to allow the viewer to be able to quickly tell how the top ten movies compare to each other utilizing length since it is second best visual cue when displaying data.We chose to display the movie titles on the x-axis and had title displayed vertically to allow ease of readability. Imdb numerical values are on the y axis so that the viewers can scan from left to right and gain an understanding about how each movie falls on the rating scale. 
 
